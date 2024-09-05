@@ -1,0 +1,99 @@
+type WineryCreated @entity(immutable: true) {
+  id: Bytes!
+  WineryManagement_id: Int! # uint8
+  name: String! # string
+  addy: Bytes! # address
+  latitude: BigInt! # int256
+  longitude: BigInt! # int256
+  wineryNumber: Int! # uint16
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type BatchCreated @entity(immutable: true) {
+  id: Bytes!
+  BatchManagement1_id: BigInt! # uint256
+  owner: Bytes! # address
+  batchName: String! # string
+  wineryName: String! # string
+  wineryBatchCount: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BatchRemoved @entity(immutable: true) {
+  id: Bytes!
+  batchId: BigInt! # uint256
+  batchName: String! # string
+  wineryName: String! # string
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type HumidityDataPushed @entity(immutable: true) {
+  id: Bytes!
+  batchId: BigInt! # uint256
+  batchname: String! # string
+  wineryName: String! # string
+  data: Int! # uint16
+  owner: Bytes! # address
+  wineryBatchCount: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RainDataPushed @entity(immutable: true) {
+  id: Bytes!
+  batchId: BigInt! # uint256
+  batchname: String! # string
+  wineryName: String! # string
+  data: Int! # uint16
+  owner: Bytes! # address
+  wineryBatchCount: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SoilDataPushed @entity(immutable: true) {
+  id: Bytes!
+  batchId: BigInt! # uint256
+  batchname: String! # string
+  wineryName: String! # string
+  data: Int! # uint16
+  owner: Bytes! # address
+  wineryBatchCount: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TemperatureDataPushed @entity(immutable: true) {
+  id: Bytes!
+  batchId: BigInt! # uint256
+  batchname: String! # string
+  wineryName: String! # string
+  data: Int! # uint16
+  owner: Bytes! # address
+  wineryBatchCount: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type WindDataPushed @entity(immutable: true) {
+  id: Bytes!
+  batchId: BigInt! # uint256
+  batchname: String! # string
+  wineryName: String! # string
+  data: Int! # uint16
+  owner: Bytes! # address
+  wineryBatchCount: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

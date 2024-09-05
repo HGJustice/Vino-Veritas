@@ -1,0 +1,64 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: WineryManagement
+    network: optimism-sepolia
+    source:
+      address: "0x24d01e4D4c92648B50F6E7b7715E19044A6ca8B3"
+      abi: WineryManagement
+      startBlock: 16865499
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - WineryCreated
+      abis:
+        - name: WineryManagement
+          file: ./abis/WineryManagement.json
+      eventHandlers:
+        - event: WineryCreated(uint8,string,address,int256,int256,uint16)
+          handler: handleWineryCreated
+      file: ./src/winery-management.ts
+  - kind: ethereum
+    name: BatchManagement1
+    network: optimism-sepolia
+    source:
+      address: "0x7D3B6F745A91E6ac6d9e29068594799548fA336f"
+      abi: BatchManagement1
+      startBlock: 16865509
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BatchCreated
+        - BatchRemoved
+        - HumidityDataPushed
+        - RainDataPushed
+        - SoilDataPushed
+        - TemperatureDataPushed
+        - WindDataPushed
+      abis:
+        - name: BatchManagement1
+          file: ./abis/BatchManagement1.json
+      eventHandlers:
+        - event: BatchCreated(uint256,address,string,string,uint32)
+          handler: handleBatchCreated
+        - event: BatchRemoved(uint256,string,string,address)
+          handler: handleBatchRemoved
+        - event: HumidityDataPushed(uint256,string,string,uint16,address,uint32)
+          handler: handleHumidityDataPushed
+        - event: RainDataPushed(uint256,string,string,uint16,address,uint32)
+          handler: handleRainDataPushed
+        - event: SoilDataPushed(uint256,string,string,uint16,address,uint32)
+          handler: handleSoilDataPushed
+        - event: TemperatureDataPushed(uint256,string,string,uint16,address,uint32)
+          handler: handleTemperatureDataPushed
+        - event: WindDataPushed(uint256,string,string,uint16,address,uint32)
+          handler: handleWindDataPushed
+      file: ./src/batch-management-1.ts

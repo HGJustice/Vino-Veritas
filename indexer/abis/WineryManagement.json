@@ -1,0 +1,92 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "id",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "addy",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "latitude",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "longitude",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "wineryNumber",
+        "type": "uint16"
+      }
+    ],
+    "name": "WineryCreated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_name", "type": "string" },
+      { "internalType": "int256", "name": "_latitude", "type": "int256" },
+      { "internalType": "int256", "name": "_longitude", "type": "int256" }
+    ],
+    "name": "createWinery",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "addy", "type": "address" },
+      { "internalType": "uint16", "name": "wineryCount", "type": "uint16" }
+    ],
+    "name": "getWinery",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "string", "name": "name", "type": "string" },
+          {
+            "internalType": "address",
+            "name": "wineryAddress",
+            "type": "address"
+          },
+          { "internalType": "int256", "name": "latitude", "type": "int256" },
+          { "internalType": "int256", "name": "longitude", "type": "int256" }
+        ],
+        "internalType": "struct WineryManagement.Winery",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "userAddy", "type": "address" }
+    ],
+    "name": "getWineryCount",
+    "outputs": [{ "internalType": "uint16", "name": "", "type": "uint16" }],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

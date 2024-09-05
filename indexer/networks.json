@@ -1,0 +1,11 @@
+{
+  "optimism-sepolia": {
+    "WineryManagement": {
+      "address": "0x24d01e4D4c92648B50F6E7b7715E19044A6ca8B3",
+      "startBlock": 16865499
+    },
+    "BatchManagement1": {
+      "address": "0x7D3B6F745A91E6ac6d9e29068594799548fA336f"
+    }
+  }
+}

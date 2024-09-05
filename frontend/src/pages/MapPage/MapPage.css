@@ -1,0 +1,23 @@
+.map__container {
+  position: relative;
+}
+
+.map__buttonContainer {
+  position: absolute;
+  top: 37px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.map__backButton {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.map__backButton:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,11 @@
+.locationMap__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.locationMap__map {
+  width: 1500px;
+  height: 800px;
+}
