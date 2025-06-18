@@ -1,0 +1,15 @@
+.HomePage__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.HomePage__details {
+  font-size: 20px;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: 20px;
+  padding: 10px;
+}

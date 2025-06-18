@@ -1,0 +1,299 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_wineryContract",
+        "type": "address"
+      },
+      { "internalType": "address", "name": "_batchContract", "type": "address" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  { "inputs": [], "name": "BatchDoesntExist", "type": "error" },
+  { "inputs": [], "name": "BatchNotRemoved", "type": "error" },
+  { "inputs": [], "name": "IncorrectProgress", "type": "error" },
+  { "inputs": [], "name": "NotBatchOwner", "type": "error" },
+  { "inputs": [], "name": "WineryDoesntExist", "type": "error" },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "wineID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum WineTraceability.WineStage",
+        "name": "stage",
+        "type": "uint8"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "string", "name": "name", "type": "string" },
+          {
+            "internalType": "address",
+            "name": "wineryAddress",
+            "type": "address"
+          },
+          { "internalType": "int256", "name": "latitude", "type": "int256" },
+          { "internalType": "int256", "name": "longitude", "type": "int256" }
+        ],
+        "indexed": false,
+        "internalType": "struct WineryManagement.Winery",
+        "name": "wineryData",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "string", "name": "batchName", "type": "string" },
+          { "internalType": "string", "name": "wineryName", "type": "string" },
+          { "internalType": "address", "name": "owner", "type": "address" },
+          {
+            "internalType": "uint16[]",
+            "name": "temperature",
+            "type": "uint16[]"
+          },
+          {
+            "internalType": "uint16[]",
+            "name": "windSpeed",
+            "type": "uint16[]"
+          },
+          {
+            "internalType": "uint16[]",
+            "name": "rainFall",
+            "type": "uint16[]"
+          },
+          {
+            "internalType": "uint16[]",
+            "name": "soilConductivity",
+            "type": "uint16[]"
+          },
+          {
+            "internalType": "uint16[]",
+            "name": "humidity",
+            "type": "uint16[]"
+          },
+          { "internalType": "bool", "name": "removed", "type": "bool" },
+          { "internalType": "uint32", "name": "batchCount", "type": "uint32" }
+        ],
+        "indexed": false,
+        "internalType": "struct BatchManagement1.Batch",
+        "name": "batchData",
+        "type": "tuple"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "tankID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "barrelID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "bottleID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "wineItemCount",
+        "type": "uint16"
+      }
+    ],
+    "name": "WineItemCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "wineID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum WineTraceability.WineStage",
+        "name": "stage",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "tankID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "barrelID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "bottleID",
+        "type": "uint256"
+      }
+    ],
+    "name": "WineItemProgressed",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint16", "name": "wineryCount", "type": "uint16" },
+      { "internalType": "uint256", "name": "batchID", "type": "uint256" }
+    ],
+    "name": "createWineItem",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "wineID", "type": "uint256" }
+    ],
+    "name": "getWineItem",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "wineID", "type": "uint256" },
+          {
+            "internalType": "enum WineTraceability.WineStage",
+            "name": "stage",
+            "type": "uint8"
+          },
+          {
+            "components": [
+              { "internalType": "uint256", "name": "id", "type": "uint256" },
+              { "internalType": "string", "name": "name", "type": "string" },
+              {
+                "internalType": "address",
+                "name": "wineryAddress",
+                "type": "address"
+              },
+              {
+                "internalType": "int256",
+                "name": "latitude",
+                "type": "int256"
+              },
+              {
+                "internalType": "int256",
+                "name": "longitude",
+                "type": "int256"
+              }
+            ],
+            "internalType": "struct WineryManagement.Winery",
+            "name": "wineryData",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              { "internalType": "uint256", "name": "id", "type": "uint256" },
+              {
+                "internalType": "string",
+                "name": "batchName",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "wineryName",
+                "type": "string"
+              },
+              { "internalType": "address", "name": "owner", "type": "address" },
+              {
+                "internalType": "uint16[]",
+                "name": "temperature",
+                "type": "uint16[]"
+              },
+              {
+                "internalType": "uint16[]",
+                "name": "windSpeed",
+                "type": "uint16[]"
+              },
+              {
+                "internalType": "uint16[]",
+                "name": "rainFall",
+                "type": "uint16[]"
+              },
+              {
+                "internalType": "uint16[]",
+                "name": "soilConductivity",
+                "type": "uint16[]"
+              },
+              {
+                "internalType": "uint16[]",
+                "name": "humidity",
+                "type": "uint16[]"
+              },
+              { "internalType": "bool", "name": "removed", "type": "bool" },
+              {
+                "internalType": "uint32",
+                "name": "batchCount",
+                "type": "uint32"
+              }
+            ],
+            "internalType": "struct BatchManagement1.Batch",
+            "name": "batchData",
+            "type": "tuple"
+          },
+          { "internalType": "uint256", "name": "tankID", "type": "uint256" },
+          { "internalType": "uint256", "name": "barrelID", "type": "uint256" },
+          { "internalType": "uint256", "name": "bottleID", "type": "uint256" },
+          {
+            "internalType": "uint16",
+            "name": "wineItemCount",
+            "type": "uint16"
+          }
+        ],
+        "internalType": "struct WineTraceability.WineItem",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "wineID", "type": "uint256" },
+      { "internalType": "uint256", "name": "barrelID", "type": "uint256" }
+    ],
+    "name": "progressToBarrel",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "wineID", "type": "uint256" }
+    ],
+    "name": "progressToBottle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "wineID", "type": "uint256" },
+      { "internalType": "uint256", "name": "tankID", "type": "uint256" }
+    ],
+    "name": "progressToTank",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "hardhat-project",
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.9"
+  },
+  "dependencies": {
+    "@iota/sdk": "^1.1.5",
+    "dotenv": "^16.4.5"
+  }
+}

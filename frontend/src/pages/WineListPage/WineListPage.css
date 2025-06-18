@@ -1,0 +1,108 @@
+/* Container for the entire page */
+.wine-list-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Main heading */
+.wine-list-container h1 {
+  text-align: center;
+  color: #4a2c2a;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+/* Table styling */
+.wine-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.wine-table th,
+.wine-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.wine-table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.wine-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.wine-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* QR Code container */
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Link styling */
+.view-details-link {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #2a5d84;
+  font-weight: bold;
+}
+
+.view-details-link:hover {
+  text-decoration: underline;
+  color: #1f3d5a;
+}
+
+/* Loading and error messages */
+.message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 50px;
+}
+
+.error-message {
+  color: red;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .wine-table th,
+  .wine-table td {
+    padding: 8px 10px;
+    font-size: 0.9em;
+  }
+
+  .wine-list-container {
+    padding: 15px 20px;
+    margin: 20px;
+  }
+
+  .view-details-link {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .wine-table th,
+  .wine-table td {
+    padding: 6px 8px;
+    font-size: 0.8em;
+  }
+
+  .wine-list-container h1 {
+    font-size: 1.5em;
+  }
+}

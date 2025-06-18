@@ -1,0 +1,66 @@
+/* Container for the entire page */
+.wine-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main heading */
+.wine-details-container h1 {
+  text-align: center;
+  color: #4a2c2a;
+  margin-bottom: 30px;
+}
+
+/* Batch name heading */
+.batch-name {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Paragraphs for details */
+.details p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+/* Bold labels */
+.details p strong {
+  color: #2a5d84;
+}
+
+/* Styling for progressed items */
+.progressed-items p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .wine-details-container {
+    padding: 10px;
+  }
+
+  .batch-name {
+    font-size: 1.2em;
+  }
+
+  .section-title {
+    font-size: 1em;
+  }
+}

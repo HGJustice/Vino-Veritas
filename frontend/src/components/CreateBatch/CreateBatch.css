@@ -1,0 +1,61 @@
+.createBatch__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.createBatch__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.createBatch__form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.createBatch__input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.createBatch__label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.createBatch__input-group input[type='text'] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.createBatch__button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 42px; /* Match the height of inputs */
+}
+
+.createBatch__button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .createBatch__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .createBatch__button {
+    width: 100%;
+  }
+}

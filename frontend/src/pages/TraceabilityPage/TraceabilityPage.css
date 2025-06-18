@@ -1,0 +1,110 @@
+.traceability-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.winery-list,
+.batch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.winery-item,
+.batch-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.winery-item:hover,
+.batch-item:hover {
+  background-color: #f0f0f0;
+}
+
+.winery-item.selected,
+.batch-item.selected {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.selection-info {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.create-wine-item-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.create-wine-item-button:hover {
+  background-color: #45a049;
+}
+
+.create-wine-item-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff0000;
+  margin-top: 10px;
+}
+
+.wine-item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.wine-item-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.wine-item-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.progression-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.progression-buttons button {
+  padding: 8px 12px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.progression-buttons button:hover {
+  background-color: #007b9a;
+}
+
+.progression-buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
